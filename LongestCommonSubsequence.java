@@ -240,6 +240,7 @@ public class LongestCommonSubsequence {
 	    // trying the 2 of single dimension array approach
 	    System.out.println(twoArrayApproach(X, Y));
 	    
+	    // trying the one array approach
 	    System.out.println (oneArrayApproach(X, Y)); 
 	}
 
