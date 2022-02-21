@@ -1,4 +1,7 @@
 // Solution approched by Recursive, Dynamic Programming, Memoization
+// LeetCode Analysis :
+// 	Runtime: 13 ms, faster than 66.17% of Java online submissions for Find Kth Bit in Nth Binary String.
+// 	Memory Usage: 45.8 MB, less than 60.65% of Java online submissions for Find Kth Bit in Nth Binary String.
 
 import java.util.*;
 
