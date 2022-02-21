@@ -47,6 +47,11 @@ public class FindKthBitinNthBinaryString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println (findKthBit(3,3));
+		
+		// Test Case 1
+		//System.out.println (findKthBit(3,3));
+		
+		// Test Case 2
+		System.out.println (findKthBit(6,6));
 	}
 }
