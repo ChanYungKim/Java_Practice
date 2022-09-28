@@ -1,44 +1,44 @@
 public static void checkMagazine(List<String> magazine, List<String> note) {
-    // Write your code here
-        Hashtable<String, Integer> memo = new Hashtable<>();
-        //System.out.println (memo.toString());
-        
-        List <String> subList;
-        
-        int matchCount = 0;
-        for (int index = 0; index < note.size(); index ++) {
-            String findingWord = note.get(index);
-            if (memo.containsKey(findingWord)) {
-                //System.out.println ("CONTAINS " + findingWord + "??? " + memo.containsKey(findingWord));
-                //System.out.println (memo.get(findingWord));
-                subList = magazine.subList(memo.get(findingWord)+1, magazine.size());
-                //System.out.println (subList.toString());
-                //System.out.println (subList.contains(findingWord));
-                if (subList.contains(findingWord)) {
-                    for (int iI = memo.get(findingWord)+1; iI < magazine.size(); iI ++) {
-                        if (magazine.get(iI).equals(findingWord)) {
-                            //System.out.println ("FOUND ANOTHER");
-                            //memo.replace (findingWord, memo.get(findingWord), iI);
-                            memo.replace (findingWord, iI);
-                            //memo.put (findingWord, iI);
-                            matchCount ++;
-                            break;
-                        }
+// Write your code here
+    Hashtable<String, Integer> memo = new Hashtable<>();
+    //System.out.println (memo.toString());
+
+    List <String> subList;
+
+    int matchCount = 0;
+    for (int index = 0; index < note.size(); index ++) {
+        String findingWord = note.get(index);
+        if (memo.containsKey(findingWord)) {
+            //System.out.println ("CONTAINS " + findingWord + "??? " + memo.containsKey(findingWord));
+            //System.out.println (memo.get(findingWord));
+            subList = magazine.subList(memo.get(findingWord)+1, magazine.size());
+            //System.out.println (subList.toString());
+            //System.out.println (subList.contains(findingWord));
+            if (subList.contains(findingWord)) {
+                for (int iI = memo.get(findingWord)+1; iI < magazine.size(); iI ++) {
+                    if (magazine.get(iI).equals(findingWord)) {
+                        //System.out.println ("FOUND ANOTHER");
+                        //memo.replace (findingWord, memo.get(findingWord), iI);
+                        memo.replace (findingWord, iI);
+                        //memo.put (findingWord, iI);
+                        matchCount ++;
+                        break;
                     }
                 }
             }
-            else {
-                if (magazine.contains(findingWord)) {
-                    memo.put (findingWord, magazine.indexOf(findingWord));
-                    matchCount ++; 
-                }
-            }
-            //System.out.println (memo.toString());
-        }
-        if (matchCount == note.size()) {
-            System.out.println ("Yes");
         }
         else {
-            System.out.println ("No");
+            if (magazine.contains(findingWord)) {
+                memo.put (findingWord, magazine.indexOf(findingWord));
+                matchCount ++; 
+            }
         }
+        //System.out.println (memo.toString());
     }
+    if (matchCount == note.size()) {
+        System.out.println ("Yes");
+    }
+    else {
+        System.out.println ("No");
+    }
+}
