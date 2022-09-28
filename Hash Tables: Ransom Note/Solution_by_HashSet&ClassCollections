@@ -1,0 +1,34 @@
+public static void checkMagazine(List<String> magazine, List<String> note) {
+    // Write your code here
+    HashSet<String> uniqueWords = new HashSet<>(note);
+    //System.out.println (uniqueWords.toString());
+    Iterator wordIterator = uniqueWords.iterator();
+
+    int wordFrequencyMagazine = 0;
+    int wordFrequencyNote = 0;
+    boolean isSatisfied = true;
+    //String findingWord = "";
+    //Iterator findingWord;
+
+
+    while (wordIterator.hasNext()) {
+        String findingWord = (String) wordIterator.next();
+        wordFrequencyMagazine = Collections.frequency (magazine, findingWord);
+        wordFrequencyNote = Collections.frequency (note, findingWord);
+
+        //System.out.println ("WORD " + findingWord + " happens " + wordFrequencyMagazine + " times in MAGAZINE and " + wordFrequencyNote + " times in NOTE");
+
+        if (wordFrequencyNote > wordFrequencyMagazine) {
+            isSatisfied = false;
+            //System.out.println ("No");
+            //return;
+            break;
+        }
+    }
+    if (isSatisfied) {
+        System.out.println ("Yes");
+    }
+    else {
+        System.out.println ("No");
+    }
+}
